@@ -12,8 +12,10 @@ import {
 
 type TInfoTable = {
   header: string;
-  rows: { key: string; value: string | number }[];
+  rows: TRow[];
 } & BoxProps;
+
+export type TRow = { key: string; value: string | number };
 
 function InfoTable({ header, rows, ...boxProps }: TInfoTable) {
   return (
