@@ -18,6 +18,14 @@ describe('NavBar', () => {
     expect(getByText('Link3')).toBeInTheDocument();
   });
 
-  // TODO: Challenge 2
-  it('should render an `href` attribute for each link', () => {});
+  // Challenge 2
+  it('should render an `href` attribute for each link', () => {
+    // arrange
+    const { getByText } = renderWithProviders(<NavBar {...defaultProps} />);
+
+    // assert
+    expect(getByText('Link1')).toHaveAttribute('href');
+    expect(getByText('Link2')).toHaveAttribute('href');
+    expect(getByText('Link3')).toHaveAttribute('href');
+  });
 });
